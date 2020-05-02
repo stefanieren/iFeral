@@ -288,7 +288,7 @@ function install_qbittorrent() {
     for qbpid in ` ps aux | grep $(whoami) | grep -Ev "grep|aux|root" | grep qbittorrent | awk '{print $2}' ` ; do kill -9 $qbpid ; done
 
     if [[ $CODENAME =~ (trusty|xenial|bionic|jessie|stretch|buster) ]]; then
-        qb_version=4.2.4
+        qb_version=4.2.5
         mkdir -p $HOME/.local/{bin,lib}
         echo -e "${bold} 开始下载 qBittorrent 程序 ... ${normal}"
         wget https://sourceforge.net/projects/aboxx/files/qbittorrent/$CODENAME/qbittorrent-nox.$qb_version/download -O $HOME/.local/bin/qbittorrent-nox
